@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-transit-navy;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+  :focus-visible {
+    outline: 2px solid theme('colors.transit.teal');
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-transit-teal px-6 py-3 font-semibold text-white transition hover:bg-transit-tealLight active:scale-95;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-transit-navy px-6 py-3 font-semibold text-transit-navy transition hover:bg-transit-navy hover:text-white active:scale-95;
+  }
+  .btn-amber {
+    @apply inline-flex items-center justify-center rounded-full bg-transit-amber px-6 py-3 font-semibold text-transit-navy transition hover:bg-transit-amberDark active:scale-95;
+  }
+  .card {
+    @apply rounded-2xl bg-white p-6 shadow-card;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-transit-navy placeholder:text-transit-slate/60 focus:border-transit-teal focus:outline-none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
